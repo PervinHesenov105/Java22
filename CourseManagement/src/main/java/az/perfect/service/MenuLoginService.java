@@ -4,6 +4,7 @@
  */
 package az.perfect.service;
 
+import az.perfect.config.Base;
 import java.util.Scanner;
 
 /**
@@ -24,6 +25,8 @@ public class MenuLoginService implements MenuService {
         if((!username.equals("admin")&& password.equals("123"))){
             throw new IllegalArgumentException("password or username invalid");
         }
+        
+        Base.loggedIn=true;
 
     }
 

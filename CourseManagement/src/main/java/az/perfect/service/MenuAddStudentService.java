@@ -28,7 +28,7 @@ public class MenuAddStudentService implements MenuService {
         
         Base.instance().setStudents(s);
      
-        
+        Base.save();
     }
 
 }

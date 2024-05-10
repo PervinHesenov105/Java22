@@ -27,6 +27,8 @@ public class MenuAddTeacherService implements MenuService{
         t.setSurname(surname);
         
         Base.instance().setTeachers(t);
+        
+        Base.save();
     }
     
 }

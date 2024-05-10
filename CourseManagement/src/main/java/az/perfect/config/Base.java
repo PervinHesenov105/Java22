@@ -6,16 +6,19 @@ package az.perfect.config;
 
 import az.perfect.bean.Student;
 import az.perfect.bean.Teacher;
+import az.perfect.util.FileUtil;
+import java.io.Serializable;
 import java.util.LinkedList;
 
 /**
  *
  * @author Perfect
  */
-public class Base {
+public class Base implements Serializable{
     public static Base base;
     private LinkedList<Student> students = new LinkedList<>();
     private LinkedList<Teacher> teachers = new LinkedList<>();
+    public static boolean loggedIn;
 
     public LinkedList<Student> getStudents() {
         return students;
@@ -40,5 +43,14 @@ public class Base {
         }
         return base;
     }
+    
+    public static void save(){
+        FileUtil.writeObjectToFile(base, "app.obj");
+    }
 
+    
+    public static void initialize(){
+       Object obj = FileUtil.readObjectFromFile("app.obj");
+       base=(Base)obj;
+    }
 }

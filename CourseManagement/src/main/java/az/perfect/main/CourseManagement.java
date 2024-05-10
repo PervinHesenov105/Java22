@@ -5,7 +5,8 @@
 
 package az.perfect.main;
 
-import az.perfect.menu.MenuUtil;
+import az.perfect.config.Base;
+import az.perfect.util.MenuUtil;
 
 /**
  *
@@ -14,6 +15,7 @@ import az.perfect.menu.MenuUtil;
 public class CourseManagement {
 
     public static void main(String[] args) {
+        Base.initialize();
         MenuUtil.startMenu();
         
     }
